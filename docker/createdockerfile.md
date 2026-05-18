@@ -27,9 +27,9 @@ COPY app.py /opt/app.py
 ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
 ```
 Then we use:
-docker build <dockerfile> -t <account/tag>
+docker build . -t <account/tag>
 
-It wil then be available as an image
+It will then be available as an image
 
 docker push <account/tag>
 (after docker login)

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController # view with kubectl get replicationcontrollers 
+metadata:
+  name: myapp-rc
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template: 
+    metadata: # metadata and spec from pod yaml file
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+
+  replicas: 3

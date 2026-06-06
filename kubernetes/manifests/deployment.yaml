@@ -1,5 +1,4 @@
-apiVersion: apps/v1 #different from repliction controller if wrong results in "no match for kind=replicaset"
-kind: Deployment
+apiVersion: apps/v1 
 metadata:
   name: myapp-deployment
   labels:

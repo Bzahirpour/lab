@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30008 # has to be between 30000 32767
+  selector:
+    app: webapp # take from the labels of the definition file to link to pod

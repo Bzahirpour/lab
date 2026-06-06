@@ -1,0 +1,22 @@
+apiVersion: apps/v1 #different from repliction controller if wrong results in "no match for kind=replicaset"
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+  replicas: 6
+  selector: #required for replica set. k8s looks for the pods whos labels match the selector & counts those pods. it matches the desired number
+    matchLabels:
+      type: front-end

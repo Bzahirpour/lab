@@ -1,3 +1,10 @@
+# to set this up easier here are the extra fields required for the replicaset:
+#
+# spec:
+#   template:
+#   replicas:
+#   selector:
+
 apiVersion: apps/v1 #different from repliction controller if wrong results in "no match for kind=replicaset"
 kind: ReplicaSet
 metadata:

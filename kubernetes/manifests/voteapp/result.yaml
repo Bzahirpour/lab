@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: result-app
+  name: result-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: result-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: result-app
+    spec:
+      containers:
+      - image: kodekloud/examplevotingapp_result:v1
+        name: examplevotingapp-result-nbb8p
+        resources: {}
+status: {}

@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-06-07T21:11:12Z"
+  labels:
+    app: webappsvc
+  name: webappsvc
+  namespace: default
+  resourceVersion: "273473"
+  uid: 027e4e58-2843-459e-8a11-dece43b0cd4f
+spec:
+  clusterIP: 10.111.84.200
+  clusterIPs:
+  - 10.111.84.200
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: 80-80
+    nodePort: 30000
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
